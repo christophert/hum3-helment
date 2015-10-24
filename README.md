@@ -1,1 +1,0 @@
-# hum3-helment
