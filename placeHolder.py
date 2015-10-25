@@ -29,12 +29,14 @@ app = Flask(__name__)
 # Left turn signal
 def goLeft():
     ser.write("left\n")
+    print "left triggered"
     return "left"
 
 @app.route("/go/right")
 # Right turn signal
 def goRight():
     ser.write("right\n")
+    print "right triggered"
     return "right"
 
 def listen():
@@ -47,6 +49,7 @@ def listen():
 			client = TwilioRestClient(apikeys.TWILIO_ATSID, apikeys.TWILIO_TOKEN)
 			message = client.messages.create(to="+14122568726", from_="+15859783364", body="This is an automatic alert from HEADSMART. Your friend ZACK THOMPSON has potentially been in a collission, please attempt to contact them and/or alert emergency services.")
 			print message
+                        print "Collision detected. Sent twilio message"
 			stat = 1
 			break
 	return stat
@@ -63,7 +66,6 @@ def main():
 	#threads
 	for thread in threads:
 		thread.join()
-    # Wait til a collision i guess
 
 main()
 
