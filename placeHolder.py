@@ -46,8 +46,8 @@ def listen():
 		stat = 0
 		if "1" in recv:
 			#send sms to emerg contact
-			client = TwilioRestClient(apikeys.TWILIO_ATSID, apikeys.TWILIO_TOKEN)
-			message = client.messages.create(to="+14122568726", from_="+15859783364", body="This is an automatic alert from HEADSMART. Your friend ZACK THOMPSON has potentially been in a collission, please attempt to contact them and/or alert emergency services.")
+#			client = TwilioRestClient(apikeys.TWILIO_ATSID, apikeys.TWILIO_TOKEN)
+#			message = client.messages.create(to="+14122568726", from_="+15859783364", body="This is an automatic alert from HEADSMART. Your friend ZACK THOMPSON has potentially been in a collission, please attempt to contact them and/or alert emergency services.")
 			print message
                         print "Collision detected. Sent twilio message"
 			stat = 1
