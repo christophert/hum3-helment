@@ -28,14 +28,14 @@ app = Flask(__name__)
 @app.route("/go/left")
 # Left turn signal
 def goLeft():
-    ser.write("left\n")
+    ser.write("left")
     print "left triggered"
     return "left"
 
 @app.route("/go/right")
 # Right turn signal
 def goRight():
-    ser.write("right\n")
+    ser.write("right")
     print "right triggered"
     return "right"
 
